@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html">
+            <img src="imagenes/supremelogo.png" alt="Logo">
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleNav()">
+            &#9776; <!-- Icono de menú hamburguesa -->
+        </button>
+        <nav class="nav" id="navMenu">
+            <ul class="nav-list">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="lookbook.html">Lookbook</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Home -->
+    <section id="home" class="home">
+        <h2>Nuevas Colecciones</h2>
+        <div class="slider-container">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <div class="slider">
+                <div class="slide">
+                    <img src="imagenes/bomberjacket.png" alt="Supreme Bomber Jacket" loading="lazy">
+                    <h3>Supreme Bomber Jacket</h3>
+                    <p>$250</p>
+                    <button>Comprar Ahora</button>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/hoodie.png" alt="Supreme Hoodie" loading="lazy">
+                    <h3>Supreme Hoodie</h3>
+                    <p>$100</p>
+                    <button>Comprar Ahora</button>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/jacket.png" alt="Supreme Jacket" loading="lazy">
+                    <h3>Supreme Jacket</h3>
+                    <p>$150</p>
+                    <button>Comprar Ahora</button>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/warmuppant.png" alt="Supreme Warm Up Pant" loading="lazy">
+                    <h3>Supreme Warm Up Pant</h3>
+                    <p>$120</p>
+                    <button>Comprar Ahora</button>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/microdownpant.png" alt="Supreme Micro Down Pant" loading="lazy">
+                    <h3>Supreme Micro Down Pant</h3>
+                    <p>$100</p>
+                    <button>Comprar Ahora</button>
+                </div>
+                <div class="slide">
+                    <img src="imagenes/lovecashsweetpants.png" alt="Supreme Love Cash Sweet Pants" loading="lazy">
+                    <h3>Supreme Love Cash Sweet Pants</h3>
+                    <p>$90</p>
+                    <button>Comprar Ahora</button>
+                </div>
+            </div>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Sección Lookbook -->
+    <section class="lookbook">
+        <h2>Lookbook</h2>
+        <div class="lookbook-gallery">
+            <img src="imagenes/lookbook1.jpeg" alt="Look 1" loading="lazy">
+            <img src="imagenes/lookbook2.jpeg" alt="Look 2" loading="lazy">
+            <img src="imagenes/lookbook3.jpeg" alt="Look 3" loading="lazy">
+            <img src="imagenes/lookbook4.jpeg" alt="Look 4" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Supreme NYC.</p>
+        <p id="reloj"></p> <!-- Contenedor para el reloj -->
+    </footer>
+
+    <!-- Script del reloj -->
+    <script>
+        function actualizarReloj() {
+            const opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const opcionesHora = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+
+            const fechaArgentina = new Date().toLocaleDateString('es-AR', opcionesFecha);
+            const horaArgentina = new Date().toLocaleTimeString('es-AR', opcionesHora);
+
+            document.getElementById('reloj').innerHTML = `${fechaArgentina}, ${horaArgentina} (Hora Argentina)`;
+        }
+
+        setInterval(actualizarReloj, 1000);
+        actualizarReloj(); // Ejecutar la función por primera vez
+    </script>
+
+    <!-- Script para el slider -->
+    <script>
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            const slider = document.querySelector('.slider');
+            const slideWidth = slides[0].clientWidth + 20; // Ancho del slide + margen
+            const offset = -currentSlide * slideWidth;
+            slider.style.transform = `translateX(${offset}px)`;
+        }
+    </script>
+
+    <!-- Script del menú hamburguesa -->
+    <script>
+        function toggleNav() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
