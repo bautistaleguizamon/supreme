@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html">
+            <img src="imagenes/supremelogo.png" alt="Logo">
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleNav()">
+            &#9776; <!-- Icono de menú hamburguesa -->
+        </button>
+        <nav class="nav" id="navMenu">
+            <ul class="nav-list">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="lookbook.html">Lookbook</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+        <section id="lookbook" class="lookbook">
+            <h2>Lookbook</h2>
+            <div class="lookbook-gallery">
+                <img src="imagenes/lookbook1.jpeg" alt="Look 1">
+                <img src="imagenes/lookbook2.jpeg" alt="Look 2">
+                <img src="imagenes/lookbook3.jpeg" alt="Look 3">
+                <img src="imagenes/lookbook4.jpeg" alt="Look 4">
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 Supreme NYC.</p>
+            <p id="reloj"></p> <!-- Contenedor para el reloj -->
+        </footer>
+        
+        <script>
+        function actualizarReloj() {
+            // Crear una instancia de la fecha actual
+            const opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const opcionesHora = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        
+            // Obtener la hora y fecha actual en la zona horaria de Argentina
+            const fechaArgentina = new Date().toLocaleDateString('es-AR', opcionesFecha);
+            const horaArgentina = new Date().toLocaleTimeString('es-AR', opcionesHora);
+        
+            // Actualizar el contenido del elemento reloj
+            document.getElementById('reloj').innerHTML = `${fechaArgentina}, ${horaArgentina} (Hora Argentina)`;
+        }
+        
+        // Actualizar el reloj cada segundo
+        setInterval(actualizarReloj, 1000);
+        
+        // Llamar la función por primera vez
+        actualizarReloj();
+        </script>
+    
+<!-- Script del menú hamburguesa -->
+<script>
+    function toggleNav() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('active');
+    }
+</script>
+
+
+
+</body>
+</html>
