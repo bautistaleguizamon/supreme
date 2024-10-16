@@ -290,7 +290,16 @@ body {
     .nav-list a {
         font-size: 1em; /* Reducir tamaño de fuente en pantallas muy pequeñas */
     }
+    
+    .anuncio 
+    {
+        width: 300px;
+        height: 600px;
+        display: block;
+        margin: auto;
+    }    
 }
+
 
 
 /* Sección About Us */
@@ -312,6 +321,21 @@ body {
     gap: 10px;
     max-width: 400px;
     margin: 0 auto;
+}
+
+.cajapublicidad {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 20px 0; 
+}
+
+.anuncio {
+    max-width: 728%; 
+    height: 90px; 
+    border: none; 
+    display: block;
+    margin: auto;
 }
 
 
