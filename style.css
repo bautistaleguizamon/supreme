@@ -336,7 +336,10 @@ body {
     margin: 20px 0; 
 }
 
+
+
 /* Estilos para el lightbox */
+#lightbox {display: none;}
 .lightbox {
     display: none;  /* Oculto por defecto */
     position: fixed;
