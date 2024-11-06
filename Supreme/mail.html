@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Email</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: hwb(0 0% 100%);
+            color: white;
+        }
+        .header img {
+            max-width: 150px;
+            height: auto;
+        }
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .column {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .column h2, .column p {
+            text-align: center;
+        }
+        .column a {
+            background-color: #ff0000; /* Fondo rojo */
+            color: white; /* Texto blanco */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .column a:hover {
+            background-color: #cc0000; /* Color más oscuro al pasar el cursor */
+        }
+
+        .form-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .form-container input[type="email"], .form-container input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-container button:hover {
+            background-color: #cc0000;
+        }
+        .footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                padding: 5px;
+            }
+            .form-container input[type="email"], .form-container input[type="text"] {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="https://bautistaleguizamon.github.io/supreme/index.html"> 
+                <h1 style="color: #333333; font-size: 24px; margin: 0;">
+                    <img src="https://bautistaleguizamon.github.io/supreme/imagenes/supremelogo.png" alt="Logo Supreme">
+                </h1>  
+            </a>
+        </div>
+
+        <div class="two-column">
+            <div class="column">
+                <img src="https://bautistaleguizamon.github.io/supreme/imagenes/bomberjacket.png" alt="Producto 1">
+                <h2>Supreme Bomber Jacket</h2>
+                <p>La chaqueta que necesitas para este invierno. Estilo único y confort absoluto.</p>
+                <a href="https://bautistaleguizamon.github.io/supreme/shop.html">Comprar Ahora</a>
+            </div>
+            
+            <div class="column">
+                <img src="https://bautistaleguizamon.github.io/supreme/imagenes/hoodie.png" alt="Producto 2">
+                <h2>Supreme Hoodie</h2>
+                <p>Comodidad, estilo y calidad, todo en una sudadera perfecta para cualquier ocasión.</p>
+                <a href="https://bautistaleguizamon.github.io/supreme/shop.html">Comprar Ahora</a>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2 style="color: #333333;">Contáctanos:</h2>
+            <form>
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Email" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 Supreme NYC. Todos los derechos reservados.</p>
+            <p><a href="https://bautistaleguizamon.github.io/supreme/contact.html">Contáctanos</a> | <a href="https://tusitio.com/unsubscribe">Cancelar suscripción</a></p>
+        </div>
+    </div>
+</body>
+</html>
