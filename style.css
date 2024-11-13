@@ -189,6 +189,26 @@ body {
     right: 10px;
 }
 
+.cajapublicidad {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 20px 0; 
+    padding: 10px;
+}
+
+.anuncio {width: 728px; height: 90px; background-color: #ffffff}
+
+@media (max-width: 800px) {
+  .cajacontenedora div { width: 48% }
+  .contenedoranuncio { width: 300px; height: 250px; }
+}
+
+@media (max-width: 480px) {
+    .anuncio {width: 300px; height: 600px; background-color: #ffffff}
+}
+
+
 /* Lookbook */
 .lookbook {
     padding: 20px; 
@@ -327,13 +347,6 @@ body {
     gap: 10px;
     max-width: 400px;
     margin: 0 auto;
-}
-
-.cajapublicidad {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    margin: 20px 0; 
 }
 
 
