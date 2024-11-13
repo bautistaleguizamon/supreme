@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación del Sitio - Supreme</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .section-content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .color-palette {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .color-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            border: 2px solid #000; /* Borde negro alrededor de cada color */
+        }
+
+        /* Estilos de imagen en dispositivos móviles */
+        @media (max-width: 600px) {
+            .image-container img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header con logo -->
+    <header>
+        <img src="imagenes/imagenes:grandes.jpeg/supremelogo.png" alt="Logo de Supreme">
+        <h1>Presentación del Sitio Supreme</h1>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        
+        <!-- Sección Introducción -->
+        <section class="section" id="intro">
+            <div class="section-content">
+                <h2>Introducción a Supreme</h2>
+                <p>Supreme es una marca que representa la vanguardia del estilo urbano y contemporáneo. Nuestro sitio web está diseñado para reflejar esta estética, ofreciendo a los usuarios una experiencia moderna, dinámica y centrada en el producto.</p>
+            </div>
+            <div class="image-container">
+                <img src="imagenes/imagenes:grandes.jpeg/anuncio.jpg" alt="Imagen introductoria de Supreme">
+            </div>
+        </section>
+
+        <!-- Sección Estructura del Sitio -->
+        <section class="section" id="estructura">
+            <div class="section-content">
+                <h2>Estructura del Sitio</h2>
+                <p>El sitio web de Supreme está organizado en varias secciones clave para facilitar la navegación del usuario:</p>
+                <ul>
+                    <li><strong>Shop:</strong> Acceso directo a la tienda en línea, con una selección de productos icónicos.</li>
+                    <li><strong>Lookbook:</strong> Una galería visual con las últimas tendencias y estilos.</li>
+                    <li><strong>About Us:</strong> Información sobre la marca, nuestra historia y nuestra filosofía.</li>
+                    <li><strong>Contact:</strong> Formulario de contacto para consultas y soporte al cliente.</li>
+                </ul>
+            </div>
+            <div class="image-container">
+                <img src="imagenes/imagenes:grandes.jpeg/estructuradelsitio.jpg" alt="Estructura del sitio Supreme">
+            </div>
+        </section>
+
+        <!-- Sección Shop y Lookbook -->
+        <section class="section" id="shop-lookbook">
+            <div class="section-content">
+                <h2>Shop y Lookbook</h2>
+                <p>Mi página incluye una sección de <strong>Shop</strong>, donde los usuarios pueden explorar y adquirir nuestros productos exclusivos, como camperas, hoodies y más. También cuenta con un <strong>Lookbook</strong> que muestra las últimas tendencias y combinaciones de estilo de la marca.</p>
+            </div>
+            <div class="image-container">
+                <img src="imagenes/imagenes:grandes.jpeg/shopylookbook.jpg" alt="Vista del Shop y Lookbook de Supreme">
+            </div>
+        </section>
+
+        <!-- Sección Diseño del Sitio -->
+        <section class="section" id="diseno">
+            <div class="section-content">
+                <h2>Diseño del Sitio</h2>
+                <p>El diseño de mi sitio está pensado para ser moderno y atractivo, utilizando una paleta de colores que refleje la identidad de Supreme.</p>
+                <div class="color-palette">
+                    <div class="color-box" style="background-color: #000;"></div>
+                    <div class="color-box" style="background-color: #f00;"></div>
+                    <div class="color-box" style="background-color: #fff;"></div>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="imagenes/imagenes:grandes.jpeg/diseñodelsitio.jpg" alt="Diseño del sitio Supreme">
+            </div>
+        </section>
+        
+        <!-- Sección Final con botón de redirección -->
+        <section class="section" id="final">
+            <div class="section-content">
+
+                <a href="https://bautistaleguizamon.github.io/supreme/" target="_blank" style="padding: 10px 20px; background-color: #f00; color: #fff; text-decoration: none; border-radius: 5px;">Visitar Sitio Web</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Script de aparición gradual de las secciones al desplazarse -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
+

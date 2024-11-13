@@ -1,0 +1,409 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    line-height: 1.6;
+    color: #000000;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el logo horizontalmente */
+    background: rgba(0, 0, 0, 0.96);
+    padding: 20px;
+    position: relative;
+    z-index: 10; /* Mantener el header por encima de la imagen de fondo */
+}
+
+.header img {
+    max-width: 350px;
+    height: 100px;
+    margin-bottom: 10px; /* Espacio entre el logo y el menú */
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrar el menú debajo del logo */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Para el menú en pantallas móviles */
+.nav-toggle {
+    display: none; /* Ocultar el botón de hamburguesa en pantallas grandes */
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header img {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        display: none; /* Ocultar el menú inicialmente en pantallas pequeñas */
+    }
+
+    .nav.active {
+        display: flex; /* Mostrar el menú cuando se haga clic en el botón */
+    }
+
+    .nav-toggle {
+        display: block; /* Mostrar el botón de hamburguesa en pantallas pequeñas */
+        font-size: 24px;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 20px; /* Aumentar el espacio entre los elementos */
+    }
+
+    .nav-list a {
+        padding: 15px 20px; /* Aumentar el área clickeable de los enlaces */
+        font-size: 1.2em; /* Aumentar el tamaño de la fuente para mejor legibilidad */
+        text-align: center; /* Asegurar que el texto esté centrado */
+        display: block; /* Hacer que los enlaces se comporten como bloques */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+
+    .slide {
+        flex: 0 0 100%; /* Mobile: cada slide ocupa todo el ancho del contenedor */
+        margin: 0;
+    }
+
+    .slide img {
+        max-height: 150px; /* Reducir altura de imagen en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+
+    .nav-list a {
+        font-size: 1em; /* Reducir tamaño de fuente en pantallas muy pequeñas */
+    }
+
+    .product-item img {
+        height: auto; /* Mantener la altura automática para evitar recortes */
+    }
+}
+
+/* Sección Home */
+.home {
+    text-align: center;
+    margin: 18px;
+}
+
+.slider-container {
+    position: relative;
+    margin: 0 auto; /* Centrar el slider */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    max-width: 900px; /* Establecer un ancho máximo para el slider */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease; /* Animación suave */
+}
+
+.slide {
+    flex: 0 0 300px; /* Desktop: 300px de ancho por slide */
+    margin: 0 10px; /* Espacio entre slides */
+    text-align: center; /* Alinear texto */
+    flex-shrink: 0; /* Evitar que el slide se reduzca */
+}
+
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 100%; /* Mobile: cada slide ocupa todo el ancho del contenedor */
+        margin: 0;
+    }
+
+    .slide img {
+        max-height: 150px; /* Reducir altura de imagen en móviles */
+    }
+}
+
+.slide img {
+    width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: contain; /* Ajustar la imagen sin recortarla */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    margin-bottom: 10px; /* Espacio entre imagen y título */
+}
+
+/* Botones de navegación del slider */
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* Mantener los botones por encima del slider */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Lookbook */
+.lookbook {
+    padding: 20px; 
+    text-align: center; /* Centrar el contenido de la sección Lookbook */
+}
+
+.lookbook h2 {
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido */
+    font-size: 2em; /* Ajustar tamaño de fuente según sea necesario */
+    color: #000; /* Color del texto (opcional) */
+}
+
+.lookbook-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding-bottom: 40px; /* Añadir espacio al final para evitar el conflicto con el footer */
+}
+
+.lookbook-gallery img {
+    width: 100%;
+    max-width: 200px; /* Ajusta según el diseño, tamaño máximo en pantallas grandes */
+    height: auto;
+    object-fit: cover;
+}
+
+.lookbook-gallery img {
+    width: 100%;  /* Ajusta el tamaño al contenedor */
+    max-width: 200px;  /* Limita el tamaño máximo de las miniaturas */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    margin: 10px;  /* Espacio entre las imágenes */
+    cursor: pointer;  /* Cambia el cursor al pasar sobre la imagen */
+}
+
+.lookbook-gallery a {
+    display: inline-block;  /* Asegura que las imágenes estén alineadas correctamente */
+}
+
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .lookbook-gallery img {
+        max-width: 90%; /* Cambiar el tamaño máximo a 90% en pantallas móviles */
+        height: auto; /* Mantener la altura automática para evitar recortes */
+    }
+}
+
+@media (max-width: 480px) {
+    .lookbook-gallery img {
+        max-width: 95%; /* Aumentar el tamaño máximo en pantallas muy pequeñas */
+    }
+}
+
+
+/* Sección Shop */
+.shop {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido */
+    justify-content: space-between; /* Espacio uniforme entre elementos */
+    height: 100%; /* Asegurar que todos los productos tengan la misma altura */
+}
+
+.product-item img {
+    width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
+    height: 150px; 
+    object-fit: contain; /* Evitar recortes y asegurar que se mantengan las proporciones */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    margin-bottom: 10px; /* Espacio entre imagen y título */
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+
+    .product-item {
+        padding: 10px;
+        height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+
+    .product-item button {
+        margin-top: auto; /* Asegurar que el botón se mantenga en la parte inferior del contenedor */
+        padding: 10px 15px; /* Asegurar que el botón tenga suficiente área clickeable */
+        font-size: 1em; /* Ajustar el tamaño del texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+
+    .nav-list a {
+        font-size: 1em; /* Reducir tamaño de fuente en pantallas muy pequeñas */
+    }
+    
+}
+
+
+
+/* Sección About Us */
+.about {
+    padding: 20px;
+    text-align: center;
+    margin: 15px;
+}
+
+/* Sección Contact */
+.contact {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.cajapublicidad {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 20px 0; 
+}
+
+
+
+/* Estilos para el lightbox */
+#lightbox {display: none;}
+.lightbox {
+    display: none;  /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);  /* Fondo oscuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+}
+
+.lightbox-content {
+    max-width: 90vw;      /* Limita el ancho para adaptarse a pantallas grandes */
+    max-height: 90vh;     /* Limita el alto para adaptarse a pantallas grandes */
+    width: auto;
+    height: auto;
+    margin: auto;
+    object-fit: contain; /* Asegura que la imagen mantenga proporción */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombras para destacar */
+    text-align: center;
+    align-content: center;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 50%;
+}
+
+
+
+/* Footer */
+.footer {
+    background: #000; 
+    color: white; 
+    text-align: center;
+    padding: 20px 10px;
+    position: relative; 
+    width: 100%;
+    bottom: 0;
+    clear: both; /* Asegura que el footer se muestre debajo de todo el contenido */
+}
+.footer .footer-link {
+    color: #fff;  /* Color blanco */
+    text-decoration: none;  /* Sin subrayado */
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.footer .footer-link:hover {
+    text-decoration: underline;  /* Subrayado al pasar el mouse */
+    color: #ddd;  /* Color más claro al pasar el mouse */
+}

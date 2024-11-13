@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html">
+            <img src="imagenes/imagenes:grandes.jpeg/supremelogo.png" alt="Logo">
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleNav()">
+            &#9776; <!-- Icono de menú hamburguesa -->
+        </button>
+        <nav class="nav" id="navMenu">
+            <ul class="nav-list">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="lookbook.html">Lookbook</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+        <section id="about" class="about">     
+        <h2>About Us</h2> 
+        <h3>En abril de 1994, Supreme abrió sus puertas en la calle Lafayette, en el centro de Manhattan, y se convirtió en el hogar de la cultura del skate de la ciudad de Nueva York. En su núcleo había un grupo de chicos del vecindario, skaters de Nueva York y artistas locales que se convirtieron en el personal, el equipo y los clientes de la tienda.
+
+            Supreme creció hasta encarnar la cultura del centro de la ciudad y desempeñar un papel integral en su constante regeneración. Skaters, punks, fanáticos del hip-hop —la contracultura juvenil en general—, todos se sintieron atraídos por Supreme.
+            
+            Aunque se desarrolló hasta convertirse en una institución del centro, Supreme se estableció como una marca conocida por su calidad, estilo y autenticidad.
+            
+            A lo largo de 30 años, Supreme se ha expandido desde sus orígenes en la ciudad de Nueva York hasta convertirse en una comunidad global, trabajando con generaciones de artistas, fotógrafos, diseñadores, músicos, cineastas y escritores que desafiaron las convenciones y contribuyeron a su identidad y actitud únicas.</h3>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 Supreme NYC.</p>
+            <p id="reloj"></p> <!-- Contenedor para el reloj -->
+        </footer>
+        
+        <script>
+        function actualizarReloj() {
+            // Crear una instancia de la fecha actual
+            const opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const opcionesHora = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        
+            // Obtener la hora y fecha actual en la zona horaria de Argentina
+            const fechaArgentina = new Date().toLocaleDateString('es-AR', opcionesFecha);
+            const horaArgentina = new Date().toLocaleTimeString('es-AR', opcionesHora);
+        
+            // Actualizar el contenido del elemento reloj
+            document.getElementById('reloj').innerHTML = `${fechaArgentina}, ${horaArgentina} (Hora Argentina)`;
+        }
+        
+        // Actualizar el reloj cada segundo
+        setInterval(actualizarReloj, 1000);
+        
+        // Llamar la función por primera vez
+        actualizarReloj();
+        </script>
+    
+<!-- Script del menú hamburguesa -->
+<script>
+    function toggleNav() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('active');
+    }
+</script>
+
+
+
+</body>
+</html>
